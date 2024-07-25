@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
-import { PokemonCardProps } from "./PokemonList";
 import React from "react";
+
+interface PokemonCardProps {
+  id: number;
+  name: string;
+  imageUrl: string;
+  nickname?: string;
+  addToBag?: (pokemon: { id: number; name: string; nickname: string; imageUrl: string }) => void;
+}
 
 const PokemonCard: React.FC<PokemonCardProps> = ({ id, name, imageUrl, nickname, addToBag }) => {
   const handleAddToBag = () => {
